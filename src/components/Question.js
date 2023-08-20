@@ -12,11 +12,12 @@ function Question({ question, onAnswered }) {
       console.log("cleanup")
       cleanup(intervalId)
       handleAnswer(false)
-      clearTimeout(intervalId)
+      
   }})
 
   function cleanup(id){
     clearInterval(id)
+    
   }
   function handleAnswer(isCorrect) {
     setTimeRemaining(10);
