@@ -10,10 +10,14 @@ function Question({ question, onAnswered }) {
     }, 1000)
     if(timeRemaining === 0){
       console.log("cleanup")
-      clearInterval(intervalId)
+      cleanup(intervalId)
       handleAnswer(false)
+      clearTimeout(intervalId)
   }})
 
+  function cleanup(id){
+    clearInterval(id)
+  }
   function handleAnswer(isCorrect) {
     setTimeRemaining(10);
     onAnswered(isCorrect);
